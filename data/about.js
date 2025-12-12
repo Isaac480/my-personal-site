@@ -1,5 +1,13 @@
 const items = [
   {
+    jobTitle: 'Undergraduate Research Assistant',
+    company: 'Oishi Lab',
+    companyUrl: 'https://voices.uchicago.edu/oishilab/',
+    startDate: '2025-09-01',
+    endDate: '2025-12-12',
+    location: 'University of Chicago',
+  },
+  {
     jobTitle: 'Founder & CEO',
     company: 'Resend',
     companyUrl: 'https://resend.com',
