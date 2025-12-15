@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "lint": "next lint",
+    "deploy-gh": "npx gh-pages -d out",
     "deploy": "vercel --prod"
   },
   "license": "MIT",
@@ -20,7 +22,7 @@
     "googleapis": "^166.0.0",
     "gray-matter": "^4.0.3",
     "lottie-react": "^2.3.1",
-    "next": "^16.0.0",
+    "next": "16.0.10",
     "next-seo": "^7.0.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -37,6 +39,7 @@
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.0",
     "eslint-config-prettier": "^10.1.8",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.9.3"
   }
 }
