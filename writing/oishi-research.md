@@ -45,7 +45,7 @@ In addition to helping with conceptual components, I have served as the computat
 
   <figure style="margin: 0; text-align: center; flex: 1;">
     <video 
-      src="/static/img/posts/proj.mp4"
+      src="/static/img/posts/proj1.mp4"
       style="height:220px; width:auto; object-fit: contain;"
       autoplay
       muted
