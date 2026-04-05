@@ -91,7 +91,7 @@ function Projects(props) {
   <figure className={styles.videoFigure}>
     <div className={styles.videoWrapper}>
       <video
-        src="/static/video/Rach-clip.MOV"
+        src="/static/video/Rach-clip.mp4"
         className={styles.video}
         controls
         playsInline
@@ -106,7 +106,7 @@ function Projects(props) {
   <figure className={styles.videoFigure}>
     <div className={styles.videoWrapper}>
       <video
-        src="/static/video/Mozart-clip.MOV"
+        src="/static/video/Mozart-clip.mp4"
         className={styles.video}
         controls
         playsInline
