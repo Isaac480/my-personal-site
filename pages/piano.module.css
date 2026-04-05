@@ -1,0 +1,40 @@
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 720px;
+  margin: 32px auto;
+}
+
+.videoWrapper {
+  width: 100%;
+  height: 200;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.videoFigure {
+  margin: 0;
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .videoGrid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}

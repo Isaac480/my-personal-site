@@ -9,23 +9,18 @@ export default function Footer() {
       icon: 'ri-mail-line',
     },
     {
-      title: 'Twitter',
-      url: 'https://twitter.com/zenorocha',
-      icon: 'ri-twitter-line',
-    },
-    {
       title: 'GitHub',
-      url: 'https://github.com/zenorocha',
+      url: 'https://github.com/Isaac480',
       icon: 'ri-github-line',
     },
     {
       title: 'linkedin',
-      url: 'https://linkedin.com/in/zenorocha',
+      url: 'https://www.linkedin.com/in/isaac-cohen-22a73931b/',
       icon: 'ri-linkedin-line',
     },
     {
       title: 'Instagram',
-      url: 'https://instagram.com/zenorocha',
+      url: 'https://www.instagram.com/isaaccohen480/',
       icon: 'ri-instagram-line',
     },
   ]

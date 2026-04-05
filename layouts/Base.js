@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { PostMain, PostContent, PostContainer } from '../components/Post'
 import { Wrapper } from '../components/Wrapper'
+import { Typewriter } from '../components/Typewriter'
 
 export default function Base({ children }) {
   const { title, tagline, primaryColor, secondaryColor } = children.props
@@ -30,7 +31,14 @@ export default function Base({ children }) {
               );`,
               }}
             >
-              {tagline ? tagline : title}
+              {' '}
+                              <Typewriter
+                words={tagline.split('~').filter(Boolean).map(s => s.trim())}
+                typeSpeed = {100}
+                deleteSpeed = {100}
+                pauseTime = {2400}
+                pauseBeforeNext = {500}
+              />
             </GradientTitle>
             {children}
           </PostContainer>

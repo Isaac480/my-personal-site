@@ -9,6 +9,7 @@ import Pronunciation from '../components/Pronunciation'
 import Toast from '../components/Toast'
 import stripHtml from '../lib/strip-html'
 import items from '../data/about'
+import educations from '../data/education'
 import dynamic from 'next/dynamic'
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 import copyBioIcon from '../public/static/icons/copy-bio.json'
@@ -16,11 +17,11 @@ import downloadIcon from '../public/static/icons/download.json'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'About // Zeno Rocha',
+    title: 'About // Isaac Cohen',
     description:
-      "Zeno Rocha is a Brazilian creator and programmer. He currently lives in San Francisco, California, where he's the Founder & CEO at Resend. His lifelong appreciation for building software and sharing knowledge led him to speak in over 110 conferences worldwide. His passion for open source put him on the top 20 most active users on GitHub at age 22. Before moving to the US, Zeno developed multiple applications, mentored startups, and worked at major companies in Latin America, such as Globo and Petrobras.",
-    tagline: 'Create. Share. Repeat.',
-    image: '/static/images/about-bw.jpg',
+      "Isaac Cohen is a student at the University of Chicago studying mathematics, statistics, and psychology. Originally from New York City, he is also an accomplished distance runner and pianist. As a researcher in the Oishi Lab, Isaac uses computational methods to investigate questions about human nature and well-being.",
+    tagline: 'Think. Act. Reflect.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Website-headshot.jpg',
     primaryColor: 'pink',
     secondaryColor: 'purple',
   }
@@ -44,7 +45,7 @@ function About(props) {
         }}>
           <Image
             alt="Zeno"
-            src="/static/images/avatar.jpg"
+            src="https://upload.wikimedia.org/wikipedia/commons/0/05/Website-headshot.jpg"
             width="336"
             height="336"
             placeholder="blur"
@@ -59,21 +60,19 @@ function About(props) {
               '@bp2': { marginTop: '-6px' },
             }}
           >
-            <strong>Hey, I'm Zeno Rocha</strong>
-            <Pronunciation />
-            I started as a software engineer back in 2009, working with Flash.
+            <strong>Hey, I'm Isaac Cohen. </strong>
+            
+            I'm a sophomore at <strong>UChicago</strong> studying 
+            math, stats, and psychology.
           </Paragraph>
           <Paragraph>
-            I'm the <strong>Founder & CEO</strong> at
-            Resend. Before that, I was a VP of Developer Experience at WorkOS and CPO at Liferay Cloud. I'm originally
-            from Brazil and now living in{' '}
-            <strong>San Francisco, California</strong> with my amazing wife and
-            beautiful daughter.
+            I conduct <strong>research</strong> in the Oishi Lab,
+             where I examine the fundamental question of what constitutes 
+             a <strong>good life</strong> from a psychological perspective.
           </Paragraph>
           <Paragraph>
-            <strong>I love dark mode</strong>, open source, and side projects.
-            When I'm not working, I like running, watching movies, and{' '}
-            <strong>eating cheese</strong>.
+            In my free time, I enjoy playing classical <strong>piano</strong>, running, and 
+            <strong> optimizing</strong> my daily routine.
           </Paragraph>
         </Section>
       </Container>
@@ -87,8 +86,7 @@ function About(props) {
     return (
       <div>
         <p>
-          This is made for journalists, podcast hosts, and event organizers to
-          copy-and-paste.
+          Short bio for general audiences
         </p>
         <blockquote>
           <p>{description}</p>
@@ -109,7 +107,7 @@ function About(props) {
             as="a"
             download
             role="button"
-            href="/static/images/avatar.jpg"
+            href="/static/images/website-headshot.jpg"
             style={btnStyle}
             onClick={downloadHeadshot}
             onMouseEnter={() => downloadRef.current?.play()}
@@ -144,6 +142,33 @@ function About(props) {
             </span>
             <span> • </span>
             <span>{getDuration(item.startDate, item.endDate)}</span>
+          </p>
+        </div>
+      )
+    })
+  }
+
+  const renderAllEducation = () => {
+    return educations.map((education, index) => {
+      return (
+        <div style={{ marginBottom: 40 }} key={index}>
+          <h3>{education.jobTitle}</h3>
+          <p style={{ margin: 0 }}>
+            <a href={education.companyUrl} target="_blank">
+              {education.company}
+            </a>
+            <span> • {education.location}</span>
+          </p>
+          <p style={{ margin: 0 }}>
+            <span>{format(parseISO(education.startDate), 'LLL yyyy')}</span>
+            <span> – </span>
+            <span>
+              {education.endDate
+                ? format(parseISO(education.endDate), 'LLL yyyy')
+                : 'Present'}
+            </span>
+            <span> • </span>
+            <span>{getDuration(education.startDate, education.endDate)}</span>
           </p>
         </div>
       )
@@ -200,7 +225,7 @@ function About(props) {
       <h2>Bio</h2>
       {renderBio()}
 
-      <h2>Career</h2>
+      <h2>Experience</h2>
       {renderAll()}
 
       <Toast
@@ -210,6 +235,8 @@ function About(props) {
         showToast={showToast}
         setShowToast={setShowToast}
       />
+      <h2>Education</h2>
+      {renderAllEducation()}
     </>
   )
 }

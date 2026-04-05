@@ -6,11 +6,12 @@ import ShortcutHome from '../components/ShortcutHome'
 import { PostMain, PostContent, PostContainer } from '../components/Post'
 import { Wrapper } from '../components/Wrapper'
 import { getPersonJsonLd } from '../lib/json-ld'
+import { Typewriter } from '../components/Typewriter'
 
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Zeno Rocha',
+      title: 'Isaac Cohen',
       description: 'Obsessed with developer experience',
       image: '/static/images/home-bw.jpg',
     },
@@ -45,10 +46,13 @@ export default function Index(props) {
             <div>
               <h1>{title}</h1>
               <p>
-                <strong>Founder & CEO at{' '}
-                  <a href="https://resend.com" target="blank">Resend</a>
+                <strong>Student Researcher in the{' '}
+                  <a href="https://voices.uchicago.edu/oishilab/" target="blank">Oishi Lab</a>
                 </strong><br />
-                {description}
+                Obsessed with{' '}
+                <Typewriter
+  words={['optimization.', 'the human mind.', 'data science.']}
+/>
               </p>
               <ShortcutHome />
             </div>

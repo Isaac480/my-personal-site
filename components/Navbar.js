@@ -9,13 +9,10 @@ export default function Navbar() {
   const router = useRouter()
   const pages = [
     'About',
-    'Articles',
-    'Projects',
-    'Talks',
-    'Podcasts',
-    'Investing',
-    'Uses',
-    'Reminder',
+    'Writing',
+    'Piano',
+    'Research',
+    'Running',
   ]
   const [hovered, setHovered] = useState('')
   const { toggle } = useCommandBar()
@@ -23,7 +20,7 @@ export default function Navbar() {
   return (
     <Header>
       <ButtonLogo as={Link} href="/">
-        z
+        IC
       </ButtonLogo>
 
       <Nav>

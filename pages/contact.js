@@ -8,7 +8,7 @@ import { styled } from '../stitches.config'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Contact // Zeno Rocha',
+    title: 'Contact // Isaac Cohen',
     tagline: 'Emails. Emails. Emails.',
     image: '/static/images/reminder-bw.jpg',
     primaryColor: 'cyan',
@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
 function Contact(props) {
   const { title, image } = props
-  const description = `<strong>I love chatting</strong> with software engineers, tech founders, students, and creators. <strong>I'm a busy person</strong>, so I can't promise that I'll reply to your email right away, but I'll try my best to respond in a timely manner.`
+  const description = `Send me an email and I'll do my best to respond quickly.`
   const [isEmailSent, setIsEmailSent] = React.useState(undefined)
   const [showToast, setShowToast] = React.useState(false)
 
@@ -64,32 +64,10 @@ function Contact(props) {
 
       <Box>
         <p dangerouslySetInnerHTML={{ __html: description }} />
-        <h2>Send me an email</h2>
-        <Form onSubmit={onSendEmail}>
-          <FormGroup>
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" type="text" placeholder="James Bond" required />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="james@bond.com" required />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" placeholder="How can I help you?" rows="4" required />
-          </FormGroup>
-          <FormGroup>
-            <Button type="submit">Send</Button>
-          </FormGroup>
-        </Form>
-
-        <Toast
-          title={isEmailSent ? 'Email sent :D' : 'Error :('}
-          description={isEmailSent ? 'Thanks for taking the time to write it.' : 'Something wrong happened. Try again later.'}
-          isSuccess={isEmailSent}
-          showToast={showToast}
-          setShowToast={setShowToast}
-        />
+        <h2>Personal email:</h2>
+        Isaac.coh3n@gmail.com
+        <h2>Professional email:</h2>
+        Isaaccohen@uchicago.edu
       </Box>
     </>
   )

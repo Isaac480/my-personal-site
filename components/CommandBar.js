@@ -21,6 +21,7 @@ import homeIcon from '../public/static/icons/home.json'
 import articlesIcon from '../public/static/icons/articles.json'
 import projectsIcon from '../public/static/icons/projects.json'
 import talksIcon from '../public/static/icons/talks.json'
+import piano from '../public/static/icons/piano.json'
 import podcastsIcon from '../public/static/icons/podcasts.json'
 import investingIcon from '../public/static/icons/investing.json'
 import usesIcon from '../public/static/icons/uses.json'
@@ -90,7 +91,7 @@ export default function CommandBar(props) {
       keywords: 'view-source',
       section: 'General',
       perform: () => {
-        window.open('https://github.com/zenorocha/zenorocha.com', '_blank')
+        window.open('https://github.com/Isaac480/my-personal-site', '_blank')
         setOpen(false)
       },
       icon: <Lottie lottieRef={sourceRef} style={iconSize} animationData={sourceIcon} loop={false} autoplay={false} />,
@@ -120,89 +121,54 @@ export default function CommandBar(props) {
       icon: <Lottie lottieRef={aboutRef} style={iconSize} animationData={aboutIcon} loop={false} autoplay={false} />,
     },
     {
-      id: 'articles',
-      name: 'Articles',
+      id: 'writing',
+      name: 'Writing',
       shortcut: ['g', 'b'],
-      keywords: 'go-articles',
+      keywords: 'go-writing',
       section: 'Go To',
       perform: () => {
-        router.push('/articles')
+        router.push('/writing')
         setOpen(false)
       },
       icon: <Lottie lottieRef={articlesRef} style={iconSize} animationData={articlesIcon} loop={false} autoplay={false} />,
     },
     {
-      id: 'projects',
-      name: 'Projects',
+      id: 'piano',
+      name: 'Piano',
       shortcut: ['g', 'p'],
-      keywords: 'go-projects',
+      keywords: 'go-piano',
       section: 'Go To',
       perform: () => {
-        router.push('/projects')
+        router.push('/piano')
         setOpen(false)
       },
-      icon: <Lottie lottieRef={projectsRef} style={iconSize} animationData={projectsIcon} loop={false} autoplay={false} />,
+      icon: <Lottie lottieRef={projectsRef} style={iconSize} animationData={piano} loop={false} autoplay={false} />,
     },
     {
-      id: 'talks',
-      name: 'Talks',
+      id: 'research',
+      name: 'Research',
       shortcut: ['g', 't'],
-      keywords: 'go-talks',
+      keywords: 'go-research',
       section: 'Go To',
       perform: () => {
-        router.push('/talks')
+        router.push('/research')
         setOpen(false)
       },
       icon: <Lottie lottieRef={talksRef} style={iconSize} animationData={talksIcon} loop={false} autoplay={false} />,
     },
     {
-      id: 'podcasts',
-      name: 'Podcasts',
+      id: 'running',
+      name: 'Running',
       shortcut: ['g', 'c'],
-      keywords: 'go-podcasts',
+      keywords: 'go-running',
       section: 'Go To',
       perform: () => {
-        router.push('/podcasts')
+        router.push('/running')
         setOpen(false)
       },
       icon: <Lottie lottieRef={podcastsRef} style={iconSize} animationData={podcastsIcon} loop={false} autoplay={false} />,
     },
-    {
-      id: 'investing',
-      name: 'Investing',
-      shortcut: ['g', 'i'],
-      keywords: 'go-investing',
-      section: 'Go To',
-      perform: () => {
-        router.push('/investing')
-        setOpen(false)
-      },
-      icon: <Lottie lottieRef={investingRef} style={iconSize} animationData={investingIcon} loop={false} autoplay={false} />,
-    },
-    {
-      id: 'uses',
-      name: 'Uses',
-      shortcut: ['g', 'u'],
-      keywords: 'go-uses',
-      section: 'Go To',
-      perform: () => {
-        router.push('/uses')
-        setOpen(false)
-      },
-      icon: <Lottie lottieRef={usesRef} style={iconSize} animationData={usesIcon} loop={false} autoplay={false} />,
-    },
-    {
-      id: 'reminder',
-      name: 'Reminder',
-      shortcut: ['g', 'r'],
-      keywords: 'go-reminder',
-      section: 'Go To',
-      perform: () => {
-        router.push('/reminder')
-        setOpen(false)
-      },
-      icon: <Lottie lottieRef={reminderRef} style={iconSize} animationData={reminderIcon} loop={false} autoplay={false} />,
-    },
+    
   ], [router])
 
   const contextValue = useMemo(() => ({
