@@ -72,7 +72,7 @@ function About(props) {
           </Paragraph>
           <Paragraph>
             In my free time, I enjoy playing classical <strong>piano</strong>, running, and 
-            <strong> optimizing</strong> my daily routine.
+            <strong> working with AI</strong>.
           </Paragraph>
         </Section>
       </Container>
