@@ -69,12 +69,12 @@ The delta is modeled as Normal(μ, σ²) with unknown parameters. Using a Jeffre
 
 P(qualify) = P(δnew≥ rank − field_size), computed from this Student-t distribution. With few data points the heavy tails of the Student-t appropriately widen the uncertainty compared to a normal approximation.
 
+## Qualification Thresholds
+The threshold table inverts the model: given a target probability (e.g., 90%), we find the rank where P(qualify) equals that probability using the inverse Student-t CDF, then map that rank back to a time via the pooled time-to-rank curve. This tells you the time you need to have a given chance of qualifying.
+
 <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start;">
   <figure style="margin: 0; text-align: center; flex: 1;">
     <img src="/static/img/posts/nationals-predictor2.png" alt="assdf"
          style="height:300px; width:auto; object-fit: contain;">
     <figcaption></figcaption>
   </figure>
-
-## Qualification Thresholds
-The threshold table inverts the model: given a target probability (e.g., 90%), we find the rank where P(qualify) equals that probability using the inverse Student-t CDF, then map that rank back to a time via the pooled time-to-rank curve. This tells you the time you need to have a given chance of qualifying.
