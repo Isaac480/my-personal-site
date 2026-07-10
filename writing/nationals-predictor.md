@@ -5,13 +5,19 @@ image: /static/img/posts/piano-math.png
 date: "2026-06-16"
 ---
 
-Final product: <a href="https://nationalspredictor.vercel.app/" target="_blank">
+Final product:
+<a href="https://nationalspredictor.vercel.app/" target="_blank" rel="noopener noreferrer">
+  D3 Track Nationals Predictor
+</a>
 
 As a member of UChicago's distance program, a frequent debate on runs is the topic of qualifying for nationals. In any given year, the top 20-24 athletes in DIII are invited to compete at nationals, and so athletes put all their efforts into posting qualifying times. However, since qualification is based on ranking rather than a stable cutoff time, there is much uncertainty about what time makes the cut. Additionally, many athletes who qualify in a certain event will decide to scratch in favor of a different event, causing the ranking needed to qualify to be much more leniant than set by the NCAA. For example, in indoor 2026, the 37th ranked miler was the last person to qualify despite the top 20 auto qualifying, due to medical scratches, or athletes opting to run the DMR, 800, 3k etc. 
 
 Despite this uncertainty, we can expect the times and ranking needed to follow a somewhat predictable pattern. Times will get slightly faster between years, and the number of scratches in a given year should also follow some distribution. These distributions will be event specific – nearly everyone opts to run the 3k since it is the last distance event of indoor, but fewer people will choose to run the mile and 800 because of the preliminary rounds. The point is that these patterns can be analyzed more rigorously using statistical models, rather than our own mental heuristics and guessing. As behavioral psychology proposes, we are often poor intuitive statisticians, and often overestimate the times needed due to extraneous factors and personal experience.
 
-"People make judgments under uncertainty by relying on heuristics rather than formal calculations of probability, and these heuristics can produce predictable biases." –Daniel Khaneman, *Thinking, Fast and Slow*
+> "People make judgments under uncertainty by relying on heuristics rather than formal calculations of probability, and these heuristics can produce predictable biases."
+>
+> — Daniel Kahneman, *Thinking, Fast and Slow*
+
 
 ## Data Scraping
 The first major obstacle is obtaining the data. The NCAA doesn't keep public records of the start lists or qualifying lists for each championship meet, so I decided to scrape the data directly from TFRRS, the official results database. For each year from 2022 to the present, two pages are scraped:
@@ -48,6 +54,7 @@ A well-known phenomenon in track is that times and marks have gotten significant
          style="height:300px; width:auto; object-fit: contain;">
     <figcaption>Yearly drift from linear regression</figcaption>
   </figure>
+</div>
 
 ## Statistical Model
 The prediction pipeline has two stages:
@@ -64,6 +71,7 @@ A time qualifies if rank ≤ field_size + δ, where δ is the “delta” — ho
          style="height:300px; width:auto; object-fit: contain;">
     <figcaption></figcaption>
   </figure>
+</div>
 
 The delta is modeled as Normal(μ, σ²) with unknown parameters. Using a Jeffreys prior, the posterior predictive distribution for a new year’s delta is a Student-t distribution with n−1 degrees of freedom, centered at the sample mean with scale s⋅√(1 + 1/n). This naturally accounts for uncertainty from the small sample size (4–5 years of data).
 
@@ -78,3 +86,6 @@ The threshold table inverts the model: given a target probability (e.g., 90%), w
          style="height:300px; width:auto; object-fit: contain;">
     <figcaption></figcaption>
   </figure>
+</div>
+
+
