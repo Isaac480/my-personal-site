@@ -69,7 +69,7 @@ function Projects(props) {
   }
 
   const { title, image } = props
-  const description = `I began playing the <strong>piano</strong> at age four, but only in recent years have I understood its deeper place in my life. It provides a quiet refuge—a daily space to refine <strong>technique</strong>, explore new pieces, and lose myself in <strong>sound</strong>. Classically trained, I especially enjoy the works of romantic composers including Chopin, Liszt, and <strong>Scriabin</strong>. Currently, all my efforts are concentrated in preparing <a href="https://youtu.be/DpizevH7zeE?si=-m840yPJ3h2MCABU" target="_blank" rel="noopener noreferrer">Scriabin's Piano Concerto</a>, which I will perform in December 2026 with the University Symphony Orchestra.`
+  const description = `I began playing the <strong>piano</strong> at age four, attending special music school and training under Natela Mchedlishvili. Classically trained, I especially enjoy the works of romantic composers including Chopin, Liszt, and <strong>Scriabin</strong>. Currently, all my efforts are concentrated in preparing <a href="https://youtu.be/DpizevH7zeE?si=-m840yPJ3h2MCABU" target="_blank" rel="noopener noreferrer">Scriabin's Piano Concerto</a>, which I will perform in December 2026 with the University Symphony Orchestra.`
 
   return (
     <>

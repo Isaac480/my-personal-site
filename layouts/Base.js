@@ -29,6 +29,10 @@ export default function Base({ children }) {
                 $${primaryColor} 0%,
                 $${secondaryColor} 100%
               );`,
+                // Reserve room for 2 lines on mobile so the typewriter
+                // effect doesn't reflow the page as text wraps on/off a line.
+                minHeight: '100px',
+                '@bp2': { minHeight: 'auto' },
               }}
             >
               {' '}

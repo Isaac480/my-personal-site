@@ -20,7 +20,8 @@ export async function getStaticProps() {
   ]
 
   const featuredPosts = [
-    getPostBySlug('the-mathematics-of-piano-tuning', 'nationals-predictor', featuredParams)
+    getPostBySlug('nationals-predictor', featuredParams),
+    getPostBySlug('the-mathematics-of-piano-tuning', featuredParams),
   ]
 
   return {
