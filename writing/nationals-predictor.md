@@ -1,7 +1,7 @@
 ---
 title: Building a D3 Track Nationals Predictor
 description: "A study in statistics, generative AI, and web design"
-image: /static/img/posts/piano-math.png
+image: /static/img/posts/nationals-cover.png
 date: "2026-06-16"
 ---
 
@@ -88,4 +88,12 @@ The threshold table inverts the model: given a target probability (e.g., 90%), w
   </figure>
 </div>
 
+## Limitations
+1) Based on only 4–5 years of historical data, so predictions carry meaningful uncertainty.
+2) The model assumes the delta distribution is roughly normal and stationary — unusual years (e.g., rule changes, COVID effects) could violate this.
+3) Conversion factors are approximate population averages; individual athletes may see different flat-to-banked differentials.
+4) Times very far from the cutoff zone (extremely fast or slow) are extrapolated beyond the historical data and should be interpreted with caution.
+5) In some years, the last rank in was lower than the number of qualifiers, leading to innapropriately strict thresholds. This flaw is due to individuals scratching day-of competition, and will have to be fixed in the next version.
 
+## Futher directions
+As of July 13th 2026, the predictor is limited to only running events, so future versions will incorporate field events as they follow a similar model of qualification. The model will need to be [validated using the 2026 outdoor data](validating-nationals-predictor.md), and then adjusted accordingly. With more years of data, the 90% estimate ranges will naturally get narrower, as statistical power increases. Additionally, the model can be extended to DI and DII. While qualification for nationals is based on performance at a regional meet, the same methodology can be used for qualification for the regional meets which is based on event standing.
